@@ -13,7 +13,7 @@ enum SplashBuilder {
         let presenter = SplashPresenter(networkService,
                                         searchDataManager)
         let vc = SplashViewController(presenter)
-        presenter.controller = vc
+        presenter.splashController = vc
         return vc
     }
 }

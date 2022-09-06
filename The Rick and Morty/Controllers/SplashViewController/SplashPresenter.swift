@@ -16,7 +16,11 @@ final class SplashPresenter: SplashPresenterProtocol {
     
     // MARK: - Public Properties
     
-    weak var controller: (UIViewController & SplashViewControllerProtocol)?
+    weak var splashController: (UIViewController & SplashViewControllerProtocol)?
+    
+    weak var characterController: (UITableViewController & CharacterTableViewControllerProtocol)?
+    weak var locationController: (UITableViewController & LocationTableViewControllerProtocol)?
+    weak var episodeController: (UITableViewController & EpisodeTableViewControllerProtocol)?
     
     // MARK: - Private Properties
     
@@ -34,16 +38,66 @@ final class SplashPresenter: SplashPresenterProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
     // MARK: - Public Methods
+    
+    func fetchDataToControllers() {
+        
+        let fetchDataGroup = DispatchGroup()
+        
+        let queueOne = DispatchQueue.global(qos: .utility)
+        let queueTwo = DispatchQueue.global(qos: .utility)
+        let queueThree = DispatchQueue.global(qos: .utility)
+        
+        queueOne.async(group: fetchDataGroup) {
+            self.networkService.fetch(dataType: InfoCharacter.self, from: .characters, completion: { [weak self] results in
+                switch results {
+                case .success(let results):
+                    self?.characterController?.characters = results
+                    self?.characterController?.reloadTable()
+                case .failure(let error):
+                    self?.characterController?.failedAlert(massage: error.localizedDescription)
+                }
+            })
+            print("characters ok")
+        }
+        
+        queueTwo.async(group: fetchDataGroup) {
+            self.networkService.fetch(dataType: InfoLocation.self, from: .location, completion: { [weak self] results in
+                switch results {
+                case .success(let results):
+                    self?.locationController?.locations = results
+                    self?.locationController?.reloadTable()
+                case .failure(let error):
+                    self?.locationController?.failedAlert(massage: error.localizedDescription)
+                }
+            })
+            print("location ok")
+        }
+        
+        queueThree.async(group: fetchDataGroup) {
+            self.networkService.fetch(dataType: InfoEpisode.self, from: .episodes, completion: { [weak self] results in
+                switch results {
+                case .success(let results):
+                    self?.episodeController?.episodes = results
+                    self?.episodeController?.reloadTable()
+                case .failure(let error):
+                    self?.episodeController?.failedAlert(massage: error.localizedDescription)
+                }
+            })
+            print("episodes ok")
+        }
+        
+        fetchDataGroup.notify(queue: DispatchQueue.main) {
+            print("all tasks executed")
+        }
+    }
     
     func presentAnimateMainIcon() {
         
         let tabBarController = CategoryTabBarController(networkService, searchDataManager)
         
         UIView.animate(withDuration: TimeInterval.delay45, delay: TimeInterval.delay65) {
-            self.controller?.splashMainIcon.transform = CGAffineTransform(
+            self.splashController?.splashMainIcon.transform = CGAffineTransform(
                 scaleX: CGAffineTransform.scaleX,
                 y: CGAffineTransform.scaleY
             )
@@ -51,7 +105,7 @@ final class SplashPresenter: SplashPresenterProtocol {
             if Bool {
                 tabBarController.modalTransitionStyle = .crossDissolve
                 tabBarController.modalPresentationStyle = .fullScreen
-                self.controller?.present(tabBarController, animated: true)
+                self.splashController?.present(tabBarController, animated: true)
             }
         }
     }
