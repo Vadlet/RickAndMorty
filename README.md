@@ -6,7 +6,7 @@
 - Splash Screen
 - Адаптивная верстка интерфейса **кодом**. Проверна на **iPhoneSE (2st generation)**
 - Работа с сетью **Alamofire** ( был **URLSession** )
-- Вывод ошибок через Alert
+- Добавлена обработка ошибок при работе с NetworkManager, ImageManager. Ошибки отображаются пользователю через UIAlerController.
 - Добавлен поисковик ( **UISearchController** )
 - Поддерживает **IPad**
 - Поддерживает горизонтальный режим
