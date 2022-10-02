@@ -1,13 +1,17 @@
 ## Краткое описание
 - Проект написан на **UIKit**
-- Использована архитектура **MVP** ( был **MVC** )
-- iOS 13
+- Использована архитектура **MVP** + **MVVM** ( был **MVC** )
+- iOS >=13
 - Core Data
 - Использованны различные патерны проектирования
+- CocoaPods(R.swift, Swiftlint, FireBase(Analytics))
+- Local Notification
+- DI
 - Splash Screen
 - Адаптивная верстка интерфейса **кодом**. Проверна на **iPhoneSE (2st generation)**
 - Работа с сетью **Alamofire** ( был **URLSession** )
 - Добавлена обработка ошибок при работе с NetworkManager, ImageManager. Ошибки отображаются пользователю через UIAlerController.
+- Бесконечный скролл картинок ( **UICollectionView** )
 - Добавлен поисковик ( **UISearchController** )
 - Поддерживает **IPad**
 - Поддерживает горизонтальный режим
