@@ -6,6 +6,7 @@
 - Использованны различные патерны проектирования
 - CocoaPods(R.swift, Swiftlint, FireBase(Analytics))
 - Local Notification
+- Debug Menu
 - DI
 - Splash Screen
 - Адаптивная верстка интерфейса **кодом**. Проверна на **iPhoneSE (2st generation)**
