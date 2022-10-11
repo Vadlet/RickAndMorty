@@ -3,6 +3,7 @@
 - Использована архитектура **MVP** + **MVVM** ( был **MVC** )
 - iOS >=13
 - Core Data
+- UserDefaults
 - Использованны различные патерны проектирования
 - CocoaPods(R.swift, Swiftlint, FireBase(Analytics))
 - Local Notification
