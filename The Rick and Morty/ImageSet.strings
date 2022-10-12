@@ -1,0 +1,13 @@
+/* 
+  ImageSet.strings
+  The Rick and Morty
+
+  Created by Vadlet on 12.09.2022.
+  
+*/
+
+"characters" = "person.2";
+"locations" = "globe";
+"episodes" = "sparkles.tv";
+"mainScreenIcon" = "splashMainIcon";
+"mookPicture" = "picture";

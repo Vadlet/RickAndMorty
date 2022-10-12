@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Characters" representedClassName="Characters" syncable="YES" codeGenerationType="class">
+        <attribute name="gender" optional="YES" attributeType="String" customClassName="[String]"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="species" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Episodes" representedClassName="Episodes" syncable="YES" codeGenerationType="class">
+        <attribute name="air_date" optional="YES" attributeType="String"/>
+        <attribute name="episode" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Locations" representedClassName="Locations" syncable="YES" codeGenerationType="class">
+        <attribute name="dimension" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Characters" positionX="-27" positionY="18" width="128" height="104"/>
+        <element name="Episodes" positionX="54" positionY="108" width="128" height="74"/>
+        <element name="Locations" positionX="18" positionY="90" width="128" height="74"/>
+    </elements>
+</model>
