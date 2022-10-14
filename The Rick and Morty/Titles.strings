@@ -1,0 +1,25 @@
+/* 
+  Titels.strings
+  The Rick and Morty
+
+  Created by Vadlet on 12.09.2022.
+  
+*/
+
+"Total data size" = "Total data size: 12443мб";
+"rickAndMorty" = "The Rick and Morty";
+"Number of cells:" = "Number of cells:";
+"Is on test API" = "Is on test API";
+"CoreDataName" = "CoreDataModel";
+"characters" = "Characters";
+"air date:" = "air date: %@";
+"episode:" = "episode: %@";
+"gender:" = "gender: %@";
+"genders" = "gender:";
+"species:" = "species: %@";
+"locations" = "Locations";
+"episodes" = "Episodes";
+"search" = "Search";
+"failed" = "Failed";
+"black" = "Black";
+"ok" = "OK";

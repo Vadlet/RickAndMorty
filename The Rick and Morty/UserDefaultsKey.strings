@@ -1,0 +1,10 @@
+/* 
+  UserDefaultsKey.strings
+  The Rick and Morty
+
+  Created by Vadlet on 11.10.2022.
+  
+*/
+
+"networkServiceURL" = "networkServiceURL";
+"switcher" = "switcher";

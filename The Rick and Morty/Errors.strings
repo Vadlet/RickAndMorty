@@ -1,0 +1,10 @@
+/* 
+  Errors.strings
+  The Rick and Morty
+
+  Created by Vadlet on 12.09.2022.
+  
+*/
+
+"failed" = "Failed";
+"init(coder:) has not been implemented" = "init(coder:) has not been implemented";
